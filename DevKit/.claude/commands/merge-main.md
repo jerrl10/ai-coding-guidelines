@@ -1,3 +1,9 @@
+---
+description: Merge main into the current branch, resolving conflicts by preserving the intent of both sides rather than picking one.
+argument-hint: "[optional base branch, defaults to main]"
+allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git rev-list:*), Bash(git fetch:*), Bash(git log:*), Bash(git diff:*), Bash(git merge:*), Bash(git add:*), Bash(git commit:*), Bash(git stash:*), Read, Glob, Grep, Edit, Write
+---
+
 # Intelligent Merge from Main
 
 ## Current Context
