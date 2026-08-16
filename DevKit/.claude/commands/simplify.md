@@ -1,6 +1,7 @@
 ---
 description: Simplify the code changed on this branch — reuse, dedupe, dead-code, clarity, efficiency — without changing behavior. Applies the fixes.
 argument-hint: "[optional path or area to focus on]"
+allowed-tools: Bash(git branch:*), Bash(git status:*), Bash(git diff:*), Read, Glob, Grep, Edit, Write
 ---
 
 # Simplify

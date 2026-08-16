@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Glob(**)",
+      "Grep(**)",
+
+      "Bash(npm test:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm run test:*)",
+      "Bash(pnpm run build:*)",
+      "Bash(pnpm run lint:*)",
+      "Bash(yarn test:*)",
+      "Bash(npx tsc --noEmit:*)",
+      "Bash(node node_modules/typescript/bin/tsc --noEmit:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo test:*)",
+      "Bash(pytest:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(dotnet test:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet format:*)",
+      "Bash(dotnet run:*)",
+      "Bash(go test:*)",
+      "Bash(go build:*)",
+
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git rev-list:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git merge-base:*)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh pr status:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh repo view:*)",
+
+      "Bash(adrs list:*)",
+      "Bash(adrs search:*)",
+      "Bash(adrs --ng list:*)",
+      "Bash(adrs --ng search:*)",
+
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(jq:*)",
+      "Bash(mkdir -p:*)",
+
+      "WebFetch(domain:docs.claude.com)",
+      "WebSearch"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git merge:*)",
+      "Bash(git clean:*)",
+      "Bash(git cherry-pick:*)",
+
+      "Bash(gh pr create:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr close:*)",
+      "Bash(gh pr comment:*)",
+      "Bash(gh issue edit:*)",
+      "Bash(gh issue comment:*)",
+      "Bash(gh issue close:*)",
+      "Bash(gh api:*)",
+
+      "Bash(adrs new:*)",
+      "Bash(adrs --ng new:*)",
+      "Bash(adrs status:*)",
+      "Bash(adrs link:*)",
+
+      "Bash(npm install:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(yarn install:*)",
+      "Bash(uv pip install:*)",
+      "Bash(uv add:*)",
+      "Bash(pip install:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet remove:*)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(cargo add:*)",
+      "Bash(go get:*)",
+
+      "Edit(**/.env*)",
+      "Write(**/.env*)",
+      "Edit(**/.claude/**)",
+      "Write(**/.claude/**)",
+      "Edit(**/CLAUDE.md)",
+      "Write(**/CLAUDE.md)",
+      "Edit(**/.agent/OWNERSHIP.md)",
+      "Write(**/.agent/OWNERSHIP.md)",
+      "Edit(**/.agent/PROJECT.md)",
+      "Write(**/.agent/PROJECT.md)",
+      "Edit(**/.agent/scripts/ci*)",
+      "Write(**/.agent/scripts/ci*)",
+
+      "WebFetch(domain:*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git checkout .)",
+      "Bash(git checkout -- :*)",
+      "Bash(git restore .)",
+      "Bash(git branch -D:*)",
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(rm -r -f:*)",
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+
+      "Read(.env*)",
+      "Read(**/.env*)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/id_rsa*)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/completion-check.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
